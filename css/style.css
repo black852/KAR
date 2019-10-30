@@ -295,6 +295,10 @@ h2::after {
   .nav1 .logo {
     display: none;
   }
+  .main-product {
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, white), to(#ffdde6));
+    background: linear-gradient(90deg, white 50%, #ffdde6 100%);
+  }
   .main-product .col {
     padding: 0;
   }
@@ -310,8 +314,8 @@ h2::after {
     position: relative;
     border-radius: 50%;
     background-color: white;
-    width: 50vw;
-    height: 50vw;
+    width: 80vw;
+    height: 80vw;
   }
   .main-product .col .circle > .big-product {
     position: absolute;
@@ -321,7 +325,7 @@ h2::after {
     right: 0;
     margin: auto;
     border-radius: 50%;
-    border: 1px solid #1d10db;
+    border: 1px solid #F8C7D9;
     width: 95%;
     height: 95%;
     background-image: url(/images/cake.jpg);
