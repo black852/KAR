@@ -102,11 +102,11 @@
             padding: 3vh 0 2vh 0;
             position: relative;
             width: 44vw;
-            font-size: 2.1vmax;
+            font-size: 2.1vw;
             >span {
                 font-family: "sim";
                 color: #303030;
-                font-size: 1.6vmax;
+                font-size: 1.6vw;
             }
             &::before {
                 content: '';
@@ -256,6 +256,43 @@
                 z-index: 10;
                 .logo {
                     display: none;
+                }
+            }
+            h2 {
+                text-align: center;
+                font-family: "THE";
+                color: #FDBBFF;
+                margin: 0 auto;
+                padding: 3vh 0 2vh 0;
+                position: relative;
+                width: 44vw;
+                font-size: 5vw;
+                >span {
+                    font-family: "sim";
+                    color: #303030;
+                    font-size: 4vw;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 10.5vw;
+                    height: 1px;
+                    background-color: #303030;
+                    top: 0;
+                    bottom: 0;
+                    left: -15%;
+                    margin: auto;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 10.5vw;
+                    height: 1px;
+                    background-color: #303030;
+                    top: 0;
+                    bottom: 0;
+                    right: -15%;
+                    margin: auto;
                 }
             }
             .main-product {
