@@ -91,7 +91,7 @@
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0);
-            z-index: 999;
+            z-index: 2;
         }
         
         h2,
@@ -314,7 +314,6 @@
         @media (max-width: 992px) {
             .top-link {
                 a:last-child {
-                    position: fixed;
                     top: 60px;
                     z-index: 1;
                 }
@@ -322,7 +321,6 @@
             .nav1 {
                 background-color: #fff;
                 position: absolute;
-                top: 0;
                 z-index: 10;
                 .logo {
                     display: none;
@@ -330,79 +328,37 @@
             }
             h2,
             .purchase-process>h3 {
-                text-align: center;
-                font-family: "THE";
-                color: #FDBBFF;
-                margin: 0 auto;
                 padding: 3vh 0 2vh 0;
-                position: relative;
-                width: 44vw;
                 font-size: 5vw;
                 >span {
-                    font-family: "sim";
-                    color: #303030;
                     font-size: 4vw;
                 }
                 &::before {
-                    content: '';
-                    position: absolute;
                     width: 10.5vw;
                     height: 1px;
-                    background-color: #303030;
-                    top: 0;
-                    bottom: 0;
-                    left: -15%;
-                    margin: auto;
                 }
                 &::after {
-                    content: "";
-                    position: absolute;
                     width: 10.5vw;
                     height: 1px;
-                    background-color: #303030;
-                    top: 0;
-                    bottom: 0;
-                    right: -15%;
-                    margin: auto;
                 }
             }
             .main-product {
-                padding: 0;
                 background: linear-gradient(90deg, rgba(255, 255, 255, 1)50%, rgb(255, 221, 230)100%);
                 .col {
-                    padding: 0;
                     &:nth-child(1) {
-                        display: flex;
                         justify-content: space-evenly;
                     }
                     .circle {
-                        position: relative;
-                        border-radius: 50%;
-                        background-color: rgb(255, 255, 255);
                         width: 70vw;
                         height: 70vw;
                         >.big-product {
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            margin: auto;
-                            border-radius: 50%;
                             border: 1px solid #F8C7D9;
                             width: 95%;
                             height: 95%;
-                            background-image: url(/images/cake.jpg);
-                            background-repeat: no-repeat;
-                            background-size: contain;
                         }
                     }
                     .mini-product-box {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
                         >.mini-product {
-                            border-radius: 50%;
                             width: 10vw;
                             height: 10vw;
                             background-color: #fff;
@@ -423,10 +379,6 @@
                 }
             }
             .purchase-process {
-                padding: 0 0 3vw 0;
-                >h3 {
-                    color: #7BC3FF;
-                }
                 .processes-box {
                     margin-top: 5vw;
                     >.processes {
