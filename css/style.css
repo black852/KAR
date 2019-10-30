@@ -343,16 +343,16 @@ h2::after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .main-product .col .circle {
     position: relative;
     border-radius: 50%;
     background-color: white;
-    width: 80vw;
-    height: 80vw;
+    width: 70vw;
+    height: 70vw;
   }
   .main-product .col .circle > .big-product {
     position: absolute;
@@ -382,19 +382,19 @@ h2::after {
   }
   .main-product .col .mini-product-box > .mini-product {
     border-radius: 50%;
-    width: 5.2vw;
-    height: 5.2vw;
+    width: 10vw;
+    height: 10vw;
     background-color: #fff;
     border: 1px solid #F8C7D9;
   }
   .main-product .col .mini-product-box > .mini-product:nth-child(1), .main-product .col .mini-product-box > .mini-product:nth-child(5) {
-    margin-left: -3.5vw;
+    margin-left: 0vw;
   }
   .main-product .col .mini-product-box > .mini-product:nth-child(2), .main-product .col .mini-product-box > .mini-product:nth-child(4) {
-    margin-left: -0.5vw;
+    margin-left: 0vw;
   }
   .main-product .col .mini-product-box > .mini-product:nth-child(3) {
-    margin: 1vw 0 1vw 1vw;
+    margin: 0vw 0 0vw 0vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
