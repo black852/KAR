@@ -8,10 +8,6 @@
   src: url(../fonts/THE.woff) format("woff");
 }
 
-* {
-  outline: 1px solid red;
-}
-
 .top-link {
   padding: 0;
   display: -webkit-box;
@@ -478,7 +474,7 @@ h2::after,
   }
   .purchase-process .processes-box > .processes > span {
     padding: 0px;
-    font-size: 4vw;
+    font-size: 2.5vw;
     color: #505050;
   }
 }
