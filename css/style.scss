@@ -1,0 +1,313 @@
+        @font-face {
+            font-family: "sim";
+            src: url("/fonts/simhei.woff") format("woff");
+        }
+        
+        @font-face {
+            font-family: "THE";
+            src: url("/fonts/THE.woff") format("woff");
+        }
+        
+        * {
+            //outline: 1px solid red;
+        }
+        
+        .top-link {
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            >a:not(:last-child) {
+                img {
+                    width: 2.4vw;
+                    margin: 0 1vw;
+                }
+            }
+            a:last-child {
+                position: fixed;
+                top: 5vw;
+                z-index: 1;
+                >img {
+                    width: 3vw;
+                }
+            }
+        }
+        
+        .logo {
+            background-image: url(/images/logo.jpg);
+            width: 135px;
+            height: 150px;
+            margin: -2.6vw 18.5px 0 18.5px;
+        }
+        
+        .nav1 {
+            text-align: center;
+            padding: 0;
+            a {
+                position: relative;
+                &:not(.logo) {
+                    line-height: 100px;
+                    padding: 0;
+                    margin: 0 37.5px;
+                    height: 100px;
+                    width: 100px;
+                    font-size: 18px;
+                    font-family: "sim";
+                    color: black;
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        background-color: #FDBBFF;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        &::before {
+                            content: '';
+                            width: 70px;
+                            height: 70px;
+                            background-color: rgba(255, 255, 255, 0);
+                            border: 2px solid #FDBBFF;
+                            top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url(/images/mini-navbar.png);
+        }
+        
+        .down {
+            position: absolute;
+            width: 6vw;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: 999;
+        }
+        
+        h2 {
+            text-align: center;
+            font-family: "THE";
+            color: #FDBBFF;
+            margin: 0 auto;
+            padding: 3vh 0 2vh 0;
+            position: relative;
+            width: 44vw;
+            font-size: 2.1vmax;
+            >span {
+                font-family: "sim";
+                color: #303030;
+                font-size: 1.6vmax;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 10.5vw;
+                height: 1px;
+                background-color: #303030;
+                top: 0;
+                bottom: 0;
+                left: -15%;
+                margin: auto;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 10.5vw;
+                height: 1px;
+                background-color: #303030;
+                top: 0;
+                bottom: 0;
+                right: -15%;
+                margin: auto;
+            }
+        }
+        
+        .nav2 {
+            padding: 0;
+            ul {
+                justify-content: space-evenly;
+            }
+            a {
+                padding: 0;
+                text-align: center;
+                font-size: 1.6vmax;
+                font-family: "THE";
+                color: #303030;
+                img {
+                    width: 12vmin;
+                }
+            }
+        }
+        
+        .main-product {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1)20%, rgb(255, 221, 230)100%);
+            .col {
+                padding: 0;
+                &:nth-child(1) {
+                    display: flex;
+                }
+            }
+            .circle {
+                position: relative;
+                border-radius: 50%;
+                background-color: rgb(255, 255, 255);
+                width: 29.5vw;
+                height: 29.5vw;
+                >.big-product {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    border-radius: 50%;
+                    border: 5px solid #F8C7D9;
+                    width: 95%;
+                    height: 95%;
+                    background-image: url(/images/cake.jpg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+            .mini-product-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                >.mini-product {
+                    border-radius: 50%;
+                    width: 5.2vw;
+                    height: 5.2vw;
+                    background-color: #fff;
+                    border: 1px solid #F8C7D9;
+                    &:nth-child(1),
+                    &:nth-child(5) {
+                        margin-left: -3.5vw;
+                    }
+                    &:nth-child(2),
+                    &:nth-child(4) {
+                        margin-left: -0.5vw;
+                    }
+                    &:nth-child(3) {
+                        margin: 1vw 0 1vw 1vw;
+                    }
+                }
+            }
+            .product-textbox {
+                width: 16vmax;
+                height: 16vmax;
+                background-color: #53a8f83f;
+                box-shadow: 5px 5px 10px 10px rgba(255, 118, 221, 0.158);
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                >h3 {
+                    text-align: center;
+                    font-family: "sim";
+                    font-size: 2vmax;
+                    color: #303030;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    margin: auto;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+                >p {
+                    height: 14vmin;
+                    overflow: hidden;
+                    font-family: "THE";
+                    font-size: 1.4vmax;
+                    transform: rotate(-45deg);
+                    color: #505050;
+                    position: absolute;
+                    margin: auto;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .top-link {
+                a:last-child {
+                    position: fixed;
+                    top: 60px;
+                    z-index: 1;
+                }
+            }
+            .nav1 {
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+                z-index: 10;
+                .logo {
+                    display: none;
+                }
+            }
+            .main-product .col {
+                padding: 0;
+                &:nth-child(1) {
+                    display: flex;
+                    justify-content: center;
+                }
+                .circle {
+                    position: relative;
+                    border-radius: 50%;
+                    background-color: rgb(255, 255, 255);
+                    width: 29.5vw;
+                    height: 29.5vw;
+                    >.big-product {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        border-radius: 50%;
+                        border: 1px solid #F8C7D9;
+                        width: 95%;
+                        height: 95%;
+                        background-image: url(/images/cake.jpg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+                .mini-product-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    >.mini-product {
+                        border-radius: 50%;
+                        width: 5.2vw;
+                        height: 5.2vw;
+                        background-color: #fff;
+                        border: 1px solid #F8C7D9;
+                        &:nth-child(1),
+                        &:nth-child(5) {
+                            margin-left: -3.5vw;
+                        }
+                        &:nth-child(2),
+                        &:nth-child(4) {
+                            margin-left: -0.5vw;
+                        }
+                        &:nth-child(3) {
+                            margin: 1vw 0 1vw 1vw;
+                        }
+                    }
+                }
+            }
+        }

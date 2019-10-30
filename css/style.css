@@ -1,0 +1,359 @@
+@font-face {
+  font-family: "sim";
+  src: url("/fonts/simhei.woff") format("woff");
+}
+
+@font-face {
+  font-family: "THE";
+  src: url("/fonts/THE.woff") format("woff");
+}
+
+.top-link {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-link > a:not(:last-child) img {
+  width: 2.4vw;
+  margin: 0 1vw;
+}
+
+.top-link a:last-child {
+  position: fixed;
+  top: 5vw;
+  z-index: 1;
+}
+
+.top-link a:last-child > img {
+  width: 3vw;
+}
+
+.logo {
+  background-image: url(/images/logo.jpg);
+  width: 135px;
+  height: 150px;
+  margin: -2.6vw 18.5px 0 18.5px;
+}
+
+.nav1 {
+  text-align: center;
+  padding: 0;
+}
+
+.nav1 a {
+  position: relative;
+}
+
+.nav1 a:not(.logo) {
+  line-height: 100px;
+  padding: 0;
+  margin: 0 37.5px;
+  height: 100px;
+  width: 100px;
+  font-size: 18px;
+  font-family: "sim";
+  color: black;
+}
+
+.nav1 a:not(.logo)::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #FDBBFF;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav1 a:not(.logo):hover::before {
+  content: '';
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid #FDBBFF;
+  top: 15px;
+}
+
+.navbar-toggler-icon {
+  background-image: url(/images/mini-navbar.png);
+}
+
+.down {
+  position: absolute;
+  width: 6vw;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 999;
+}
+
+h2 {
+  text-align: center;
+  font-family: "THE";
+  color: #FDBBFF;
+  margin: 0 auto;
+  padding: 3vh 0 2vh 0;
+  position: relative;
+  width: 44vw;
+  font-size: 2.1vmax;
+}
+
+h2 > span {
+  font-family: "sim";
+  color: #303030;
+  font-size: 1.6vmax;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  width: 10.5vw;
+  height: 1px;
+  background-color: #303030;
+  top: 0;
+  bottom: 0;
+  left: -15%;
+  margin: auto;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 10.5vw;
+  height: 1px;
+  background-color: #303030;
+  top: 0;
+  bottom: 0;
+  right: -15%;
+  margin: auto;
+}
+
+.nav2 {
+  padding: 0;
+}
+
+.nav2 ul {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.nav2 a {
+  padding: 0;
+  text-align: center;
+  font-size: 1.6vmax;
+  font-family: "THE";
+  color: #303030;
+}
+
+.nav2 a img {
+  width: 12vmin;
+}
+
+.main-product {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, white), to(#ffdde6));
+  background: linear-gradient(90deg, white 20%, #ffdde6 100%);
+}
+
+.main-product .col {
+  padding: 0;
+}
+
+.main-product .col:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-product .circle {
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  width: 29.5vw;
+  height: 29.5vw;
+}
+
+.main-product .circle > .big-product {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 5px solid #F8C7D9;
+  width: 95%;
+  height: 95%;
+  background-image: url(/images/cake.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-product .mini-product-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main-product .mini-product-box > .mini-product {
+  border-radius: 50%;
+  width: 5.2vw;
+  height: 5.2vw;
+  background-color: #fff;
+  border: 1px solid #F8C7D9;
+}
+
+.main-product .mini-product-box > .mini-product:nth-child(1), .main-product .mini-product-box > .mini-product:nth-child(5) {
+  margin-left: -3.5vw;
+}
+
+.main-product .mini-product-box > .mini-product:nth-child(2), .main-product .mini-product-box > .mini-product:nth-child(4) {
+  margin-left: -0.5vw;
+}
+
+.main-product .mini-product-box > .mini-product:nth-child(3) {
+  margin: 1vw 0 1vw 1vw;
+}
+
+.main-product .product-textbox {
+  width: 16vmax;
+  height: 16vmax;
+  background-color: #53a8f83f;
+  -webkit-box-shadow: 5px 5px 10px 10px rgba(255, 118, 221, 0.158);
+          box-shadow: 5px 5px 10px 10px rgba(255, 118, 221, 0.158);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.main-product .product-textbox > h3 {
+  text-align: center;
+  font-family: "sim";
+  font-size: 2vmax;
+  color: #303030;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main-product .product-textbox > p {
+  height: 14vmin;
+  overflow: hidden;
+  font-family: "THE";
+  font-size: 1.4vmax;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  color: #505050;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .top-link a:last-child {
+    position: fixed;
+    top: 60px;
+    z-index: 1;
+  }
+  .nav1 {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+  .nav1 .logo {
+    display: none;
+  }
+  .main-product .col {
+    padding: 0;
+  }
+  .main-product .col:nth-child(1) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main-product .col .circle {
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    width: 29.5vw;
+    height: 29.5vw;
+  }
+  .main-product .col .circle > .big-product {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    border: 1px solid #F8C7D9;
+    width: 95%;
+    height: 95%;
+    background-image: url(/images/cake.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .main-product .col .mini-product-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .main-product .col .mini-product-box > .mini-product {
+    border-radius: 50%;
+    width: 5.2vw;
+    height: 5.2vw;
+    background-color: #fff;
+    border: 1px solid #F8C7D9;
+  }
+  .main-product .col .mini-product-box > .mini-product:nth-child(1), .main-product .col .mini-product-box > .mini-product:nth-child(5) {
+    margin-left: -3.5vw;
+  }
+  .main-product .col .mini-product-box > .mini-product:nth-child(2), .main-product .col .mini-product-box > .mini-product:nth-child(4) {
+    margin-left: -0.5vw;
+  }
+  .main-product .col .mini-product-box > .mini-product:nth-child(3) {
+    margin: 1vw 0 1vw 1vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */
