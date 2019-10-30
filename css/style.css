@@ -310,8 +310,8 @@ h2::after {
     position: relative;
     border-radius: 50%;
     background-color: white;
-    width: 29.5vw;
-    height: 29.5vw;
+    width: 50vw;
+    height: 50vw;
   }
   .main-product .col .circle > .big-product {
     position: absolute;
