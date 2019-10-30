@@ -1,11 +1,11 @@
         @font-face {
             font-family: "sim";
-            src: url(/fonts/simhei.woff) format("woff");
+            src: url(../fonts/simhei.woff) format("woff");
         }
         
         @font-face {
             font-family: "THE";
-            src: url(/fonts/THE.woff) format("woff");
+            src: url(../fonts/THE.woff) format("woff");
         }
         
         * {
@@ -34,7 +34,7 @@
         }
         
         .logo {
-            background-image: url(/images/logo.jpg);
+            background-image: url(../images/logo.jpg);
             width: 135px;
             height: 150px;
             margin: -2.6vw 18.5px 0 18.5px;
@@ -82,7 +82,7 @@
         }
         
         .navbar-toggler-icon {
-            background-image: url(/images/mini-navbar.png);
+            background-image: url(../images/mini-navbar.png);
         }
         
         .down {
