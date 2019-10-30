@@ -8,6 +8,10 @@
   src: url(../fonts/THE.woff) format("woff");
 }
 
+* {
+  outline: 1px solid red;
+}
+
 .top-link {
   padding: 0;
   display: -webkit-box;
@@ -102,12 +106,6 @@
   z-index: 999;
 }
 
-.ccc {
-  padding: 0;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 221, 230, 0.5))), no-repeat 50% 50%/cover;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 221, 230, 0.5)), no-repeat 50% 50%/cover;
-}
-
 h2,
 .purchase-process > h3 {
   text-align: center;
@@ -178,6 +176,10 @@ h2::after,
 .main-product {
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, white), to(#ffdde6));
   background: linear-gradient(90deg, white 20%, #ffdde6 100%);
+}
+
+.main-product .row {
+  margin: 0;
 }
 
 .main-product .col {
@@ -501,7 +503,7 @@ h2::after,
     margin-top: 5vw;
   }
   .purchase-process .processes-box > .processes {
-    height: 40vw;
+    height: auto;
     width: 30vw;
     -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.247);
             box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.247);
@@ -517,8 +519,8 @@ h2::after,
     display: block;
     position: absolute;
     z-index: 5;
-    top: -25vw;
-    right: -6vw;
+    top: -45vw;
+    right: -5vw;
     margin: auto;
     width: 6vw;
     height: 4vw;
@@ -533,12 +535,12 @@ h2::after,
     width: 8vw;
   }
   .purchase-process .processes-box > .processes > h4 {
-    font-size: 4vw;
+    font-size: 5vw;
     color: #303030;
   }
   .purchase-process .processes-box > .processes > span {
     padding: 0px;
-    font-size: 1vw;
+    font-size: 4vw;
     color: #505050;
   }
 }
