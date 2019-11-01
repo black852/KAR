@@ -88,10 +88,20 @@
   top: 15px;
 }
 
-.navbar-toggler-icon {
-  background-image: url(../images/mini-navbar.png);
+.nav1 > .mini-button {
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  width: 10vw;
+  height: 8vw;
+  background-image: url(../images/mini-navbar2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
+/*.navbar-toggler-icon {
+            background-image: url(../images/mini-navbar2.png);
+        }*/
 .down {
   position: absolute;
   width: 6vw;
@@ -191,12 +201,16 @@ h2::after,
 .main-product .circle {
   position: relative;
   border-radius: 50%;
+  -webkit-box-shadow: -5px 0px 0px 0px rgba(228, 173, 173, 0.61) inset;
+          box-shadow: -5px 0px 0px 0px rgba(228, 173, 173, 0.61) inset;
   background-color: white;
   width: 29.5vw;
   height: 29.5vw;
 }
 
 .main-product .circle > .big-product {
+  -webkit-animation: big-product_rotateOut .5s forwards;
+          animation: big-product_rotateOut .5s forwards;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -204,12 +218,80 @@ h2::after,
   right: 0;
   margin: auto;
   border-radius: 50%;
-  border: 5px solid #F8C7D9;
+  border: 3px solid #F8C7D9;
   width: 95%;
   height: 95%;
   background-image: url(../images/cake.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@-webkit-keyframes big-product_rotateIn {
+  from {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-image: url(../images/cake/dancing-macaron.jpg);
+  }
+}
+
+@keyframes big-product_rotateIn {
+  from {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-image: url(../images/cake/dancing-macaron.jpg);
+  }
+}
+
+@-webkit-keyframes big-product_rotateOut {
+  from {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-image: url(../images/cake/dancing-macaron.jpg);
+  }
+  to {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+@keyframes big-product_rotateOut {
+  from {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-image: url(../images/cake/dancing-macaron.jpg);
+  }
+  to {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+.main-product .circle > .big-product:hover {
+  -webkit-animation: big-product_rotateIn .5s forwards;
+          animation: big-product_rotateIn .5s forwards;
+}
+
+.main-product .circle > .big-product::before {
+  content: '';
+  display: block;
+  width: 1%;
+  height: 1%;
+  background-color: #F8C7D9;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: -2.1%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .main-product .mini-product-box {
@@ -229,6 +311,7 @@ h2::after,
   width: 5.2vw;
   height: 5.2vw;
   border: 4px solid white;
+  cursor: pointer;
 }
 
 .main-product .mini-product-box > .mini-product:nth-child(1), .main-product .mini-product-box > .mini-product:nth-child(5) {
@@ -369,9 +452,34 @@ h2::after,
 
 /*---------------------------------------------------------------------------*/
 @media (max-width: 992px) {
-  .top-link a:last-child {
-    top: 60px;
+  .top-link {
+    padding: 0;
+    position: absolute;
     z-index: 1;
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .top-link > a:not(:last-child) img {
+    width: 7vw;
+    margin: 1vw 0vw;
+  }
+  .top-link a:last-child {
+    position: fixed;
+    top: 30vw;
+    z-index: 1;
+  }
+  .top-link a:last-child > img {
+    width: 5vw;
   }
   .nav1 {
     background-color: #fff;
@@ -405,9 +513,9 @@ h2::after,
     background: linear-gradient(90deg, white 50%, #ffdde6 100%);
   }
   .main-product .col:nth-child(1) {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .main-product .col .circle {
     width: 70vw;
@@ -432,6 +540,9 @@ h2::after,
   }
   .main-product .col .mini-product-box > .mini-product:nth-child(3) {
     margin: 0vw 0 0vw 0vw;
+  }
+  .purchase-process {
+    margin-top: 0;
   }
   .purchase-process .processes-box {
     margin-top: 5vw;
