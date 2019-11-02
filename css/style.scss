@@ -87,7 +87,7 @@
                 padding: 0;
                 width: 10vw;
                 height: 8vw;
-                background-image: url(../images/mini-navbar2.png);
+                background-image: url(../images/mini-navbar3.png);
                 background-size: contain;
                 background-repeat: no-repeat;
             }
@@ -370,19 +370,23 @@
                 color: #fff;
                 position: relative;
                 display: flex;
-                font-size: 18px;
                 background-color: #351327;
                 text-align: left;
+                >a>img {
+                    width: 10vw;
+                }
                 div {
-                    width: 50%;
+                    width: 55%;
                     padding: 0 20px;
                     line-height: 30px;
+                    font-size: 1.2vw;
                 }
                 span {
                     font-family: "sim";
                     position: absolute;
                     bottom: 0;
                     right: 0;
+                    font-size: 1vw;
                 }
             }
             /*---------------------------------------------------------------------------*/
