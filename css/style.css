@@ -170,13 +170,13 @@ h2::after,
 .nav2 a {
   padding: 0;
   text-align: center;
-  font-size: 1.6vmax;
+  font-size: 4vmin;
   font-family: "THE";
   color: #303030;
 }
 
 .nav2 a img {
-  width: 12vmin;
+  width: 20vmin;
 }
 
 .main-product {
@@ -210,8 +210,8 @@ h2::after,
 }
 
 .main-product .circle > .big-product {
-  -webkit-animation: big-product_rotateOut .5s forwards;
-          animation: big-product_rotateOut .5s forwards;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -276,20 +276,21 @@ h2::after,
 }
 
 .main-product .circle > .big-product:hover {
-  -webkit-animation: big-product_rotateIn .5s forwards;
-          animation: big-product_rotateIn .5s forwards;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-image: none;
 }
 
 .main-product .circle > .big-product::before {
   content: '';
   display: block;
-  width: 1%;
-  height: 1%;
-  background-color: #F8C7D9;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  border-style: solid;
+  width: 0;
+  height: 0;
+  border-width: 0px 10px 10px 10px;
+  border-color: transparent transparent #F8C7D9 transparent;
   position: absolute;
-  top: -2.1%;
+  top: -12px;
   left: 0;
   right: 0;
   margin: auto;
@@ -298,13 +299,13 @@ h2::after,
 .main-product .circle > .big-product::after {
   content: '';
   display: block;
-  width: 1%;
-  height: 1%;
-  background-color: #F8C7D9;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+  border-color: #F8C7D9 transparent transparent transparent;
   position: absolute;
-  bottom: -2.1%;
+  bottom: -12px;
   left: 0;
   right: 0;
   margin: auto;
@@ -345,7 +346,7 @@ h2::after,
 .main-product .product-textbox {
   width: 16vmax;
   height: 16vmax;
-  background-color: #53a8f83f;
+  background-color: rgba(179, 221, 255, 0.603);
   -webkit-box-shadow: 5px 5px 10px 10px rgba(255, 118, 221, 0.158);
           box-shadow: 5px 5px 10px 10px rgba(255, 118, 221, 0.158);
   position: relative;
@@ -357,7 +358,7 @@ h2::after,
 
 .main-product .product-textbox > h3 {
   text-align: center;
-  font-family: "sim";
+  font-family: "THE";
   font-size: 2vmax;
   color: #303030;
   -webkit-transform: rotate(-45deg);
@@ -407,15 +408,35 @@ h2::after,
 }
 
 .purchase-process .processes-box > .processes {
+  -webkit-transition: .3s;
+  transition: .3s;
   font-family: "THE";
   position: relative;
   text-align: center;
   height: 400px;
   width: 300px;
-  border: 2px solid #7BC3FF;
+  border: 2px solid rgba(123, 196, 255, 0.5);
   background-color: #fff;
   -webkit-box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.247);
           box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.247);
+}
+
+.purchase-process .processes-box > .processes:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 2px solid #7bc4ff;
+}
+
+.purchase-process .processes-box > .processes:hover:not(:last-child)::after {
+  background-image: url(../images/pay.png);
+}
+
+.purchase-process .processes-box > .processes:hover::before {
+  border: 2px solid #7bc4ff;
+  border-right: 2px solid rgba(255, 255, 255, 0);
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 
 .purchase-process .processes-box > .processes::before {
@@ -425,7 +446,7 @@ h2::after,
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 2px solid #7BC3FF;
+  border: 2px solid rgba(123, 196, 255, 0.5);
   border-right: 2px solid rgba(255, 255, 255, 0);
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   -webkit-transform: rotate(45deg);
@@ -581,6 +602,12 @@ footer span {
     border: 1px solid #F8C7D9;
     width: 95%;
     height: 95%;
+  }
+  .main-product .col .circle > .big-product::before {
+    top: -10px;
+  }
+  .main-product .col .circle > .big-product::after {
+    bottom: -10px;
   }
   .main-product .col .mini-product-box {
     margin-right: 1vw;

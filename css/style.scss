@@ -151,11 +151,11 @@
                 a {
                     padding: 0;
                     text-align: center;
-                    font-size: 1.6vmax;
+                    font-size: 4vmin;
                     font-family: "THE";
                     color: #303030;
                     img {
-                        width: 12vmin;
+                        width: 20vmin;
                     }
                 }
             }
@@ -199,9 +199,11 @@
                             }
                         }
                         &:hover {
-                            animation: big-product_rotateIn .5s forwards;
+                            transform: rotateY(180deg);
+                            background-image: none;
                         }
-                        animation:big-product_rotateOut .5s forwards;
+                        //animation:big-product_rotateOut .5s forwards;
+                        transition: 0.3s;
                         position: absolute;
                         top: 0;
                         bottom: 0;
@@ -218,12 +220,13 @@
                         &::before {
                             content: '';
                             display: block;
-                            width: 1%;
-                            height: 1%;
-                            background-color: #F8C7D9;
-                            transform: rotate(45deg);
+                            border-style: solid;
+                            width: 0;
+                            height: 0;
+                            border-width: 0px 10px 10px 10px;
+                            border-color: transparent transparent #F8C7D9 transparent;
                             position: absolute;
-                            top: -2.1%;
+                            top: -12px;
                             left: 0;
                             right: 0;
                             margin: auto;
@@ -231,12 +234,13 @@
                         &::after {
                             content: '';
                             display: block;
-                            width: 1%;
-                            height: 1%;
-                            background-color: #F8C7D9;
-                            transform: rotate(45deg);
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 10px 10px 0px 10px;
+                            border-color: #F8C7D9 transparent transparent transparent;
                             position: absolute;
-                            bottom: -2.1%;
+                            bottom: -12px;
                             left: 0;
                             right: 0;
                             margin: auto;
@@ -269,7 +273,7 @@
                 .product-textbox {
                     width: 16vmax;
                     height: 16vmax;
-                    background-color: #53a8f83f;
+                    background-color: rgba(179, 221, 255, 0.603);
                     box-shadow: 5px 5px 10px 10px rgba(255, 118, 221, 0.158);
                     position: relative;
                     top: 50%;
@@ -277,7 +281,7 @@
                     transform: translate(-50%, -50%) rotate(45deg);
                     >h3 {
                         text-align: center;
-                        font-family: "sim";
+                        font-family: "THE";
                         font-size: 2vmax;
                         color: #303030;
                         transform: rotate(-45deg);
@@ -317,14 +321,28 @@
                     justify-content: space-around;
                     margin-top: 5vw;
                     >.processes {
+                        transition: .3s;
                         font-family: "THE";
                         position: relative;
                         text-align: center;
                         height: 400px;
                         width: 300px;
-                        border: 2px solid #7BC3FF;
+                        border: 2px solid rgba(123, 196, 255, 0.5);
                         background-color: #fff;
                         box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.247);
+                        &:hover {
+                            transform: scale(1.1);
+                            box-shadow: none;
+                            border: 2px solid rgb(123, 196, 255);
+                            &:not(:last-child)::after {
+                                background-image: url(../images/pay.png);
+                            }
+                            &::before {
+                                border: 2px solid rgb(123, 196, 255);
+                                border-right: 2px solid rgba(255, 255, 255, 0);
+                                border-bottom: 2px solid rgba(255, 255, 255, 0);
+                            }
+                        }
                         &::before {
                             content: '';
                             display: block;
@@ -332,7 +350,7 @@
                             width: 150px;
                             height: 150px;
                             border-radius: 50%;
-                            border: 2px solid #7BC3FF;
+                            border: 2px solid rgba(123, 196, 255, 0.5);
                             border-right: 2px solid rgba(255, 255, 255, 0);
                             border-bottom: 2px solid rgba(255, 255, 255, 0);
                             transform: rotate(45deg);
@@ -467,6 +485,12 @@
                                 border: 1px solid #F8C7D9;
                                 width: 95%;
                                 height: 95%;
+                                &::before {
+                                    top: -10px;
+                                }
+                                &::after {
+                                    bottom: -10px;
+                                }
                             }
                         }
                         .mini-product-box {
