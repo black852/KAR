@@ -123,7 +123,7 @@ h2,
 .purchase-process > h3 {
   text-align: center;
   font-family: "THE";
-  color: #FDBBFF;
+  color: #9c71ff;
   margin: 0 auto;
   padding: 3vh 0 2vh 0;
   position: relative;
@@ -230,7 +230,7 @@ h2::after,
   height: 95%;
   background-image: url(../images/cake.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .main-product .circle > .big-product:hover {
@@ -241,7 +241,7 @@ h2::after,
 
 .main-product .circle > .big-product:hover::before {
   top: 30px;
-  left: 260px;
+  left: 250px;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
 }
@@ -402,6 +402,10 @@ h2::after,
 
 .main-product .mini-product-box > .mini-product:nth-child(3) {
   margin: 1vw 0 1vw 1vw;
+}
+
+.main-product .cathead {
+  border: 4px solid #bbacfc;
 }
 
 .main-product .product-textbox {
@@ -752,7 +756,7 @@ footer span {
     display: block;
     position: absolute;
     z-index: 5;
-    top: -55vw;
+    top: -60vw;
     right: -5vw;
     margin: auto;
     width: 6vw;
