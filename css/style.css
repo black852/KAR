@@ -112,6 +112,13 @@
   z-index: 2;
 }
 
+.cc {
+  padding-bottom: 10px;
+  background-image: url(../images/banner/mbg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h2,
 .purchase-process > h3 {
   text-align: center;
@@ -176,13 +183,11 @@ h2::after,
 }
 
 .nav2 a img {
-  width: 20vmin;
+  width: 16vmin;
 }
 
 .main-product {
   padding: 0;
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, white), to(#ffdde6));
-  background: linear-gradient(90deg, white 20%, #ffdde6 100%);
 }
 
 .main-product .row {
@@ -213,6 +218,7 @@ h2::after,
   -webkit-transition: 0.3s;
   transition: 0.3s;
   position: absolute;
+  z-index: 2;
   top: 0;
   bottom: 0;
   left: 0;
@@ -227,58 +233,32 @@ h2::after,
   background-size: contain;
 }
 
-@-webkit-keyframes big-product_rotateIn {
-  from {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-  to {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-    background-image: url(../images/cake/dancing-macaron.jpg);
-  }
-}
-
-@keyframes big-product_rotateIn {
-  from {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-  to {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-    background-image: url(../images/cake/dancing-macaron.jpg);
-  }
-}
-
-@-webkit-keyframes big-product_rotateOut {
-  from {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-    background-image: url(../images/cake/dancing-macaron.jpg);
-  }
-  to {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-}
-
-@keyframes big-product_rotateOut {
-  from {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-    background-image: url(../images/cake/dancing-macaron.jpg);
-  }
-  to {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-}
-
 .main-product .circle > .big-product:hover {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   background-image: none;
+}
+
+.main-product .circle > .big-product:hover::before {
+  top: 30px;
+  left: 260px;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.main-product .circle > .big-product:hover::after {
+  top: -360px;
+  right: 260px;
+  -webkit-transform: rotate(140deg);
+          transform: rotate(140deg);
+}
+
+.main-product .circle > .big-product:hover + .cat {
+  -webkit-transition: 1s;
+  transition: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .main-product .circle > .big-product::before {
@@ -309,6 +289,87 @@ h2::after,
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.main-product .circle .cat {
+  display: none;
+  padding: 0 10%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main-product .circle .cat .eye {
+  width: 100px;
+  height: 100px;
+  border-radius: 50% 5% 50% 5%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: 1px solid #505050;
+  margin-top: 30%;
+}
+
+.main-product .circle .cat .eye .addtocart {
+  color: #505050;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #505050;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 5em;
+  text-align: center;
+  line-height: 100%;
+}
+
+.main-product .circle .cat .nose {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #505050;
+  margin-top: 70%;
+}
+
+.main-product .circle .cat .nose::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 45px;
+  bottom: 0;
+  left: -100px;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: transparent transparent #505050 #505050;
+  border-style: solid;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.main-product .circle .cat .nose::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 45px;
+  bottom: 0;
+  left: 0;
+  right: -100px;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: transparent transparent #505050 #505050;
+  border-style: solid;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .main-product .mini-product-box {
@@ -430,7 +491,24 @@ h2::after,
 }
 
 .purchase-process .processes-box > .processes:hover:not(:last-child)::after {
-  background-image: url(../images/pay.png);
+  -webkit-animation: ltor 1s infinite;
+          animation: ltor 1s infinite;
+}
+
+@-webkit-keyframes ltor {
+  form {
+  }
+  to {
+    background-position: 31px 0;
+  }
+}
+
+@keyframes ltor {
+  form {
+  }
+  to {
+    background-position: 31px 0;
+  }
 }
 
 .purchase-process .processes-box > .processes:hover::before {
@@ -604,10 +682,37 @@ footer span {
     height: 95%;
   }
   .main-product .col .circle > .big-product::before {
+    border-width: 0px 9px 9px 9px;
     top: -10px;
   }
   .main-product .col .circle > .big-product::after {
+    border-width: 9px 9px 0px 9px;
     bottom: -10px;
+  }
+  .main-product .col .circle > .big-product:hover {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-image: none;
+  }
+  .main-product .col .circle > .big-product:hover::before {
+    top: 10px;
+    left: 150px;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  .main-product .col .circle > .big-product:hover::after {
+    top: 10px;
+    right: 150px;
+    -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+    margin: 0 auto;
+  }
+  .main-product .col .circle > .big-product:hover + .cat {
+    -webkit-transition: 1s;
+    transition: 1s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .main-product .col .mini-product-box {
     margin-right: 1vw;
@@ -627,11 +732,8 @@ footer span {
   .main-product .col .mini-product-box > .mini-product:nth-child(3) {
     margin: 0vw 0 0vw 0vw;
   }
-  .purchase-process {
-    margin-top: 0;
-  }
   .purchase-process .processes-box {
-    margin-top: 5vw;
+    margin-top: 10vw;
   }
   .purchase-process .processes-box > .processes {
     height: 50vw;

@@ -104,6 +104,14 @@
                 z-index: 2;
             }
             
+            .cc {
+                padding-bottom: 10px;
+                background-image: url(../images/banner/mbg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                //background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(255, 221, 230)100%);
+            }
+            
             h2,
             .purchase-process>h3 {
                 text-align: center;
@@ -155,14 +163,14 @@
                     font-family: "THE";
                     color: #303030;
                     img {
-                        width: 20vmin;
+                        width: 16vmin;
                     }
                 }
             }
             
             .main-product {
                 padding: 0;
-                background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(255, 221, 230)100%);
+                //background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(255, 221, 230)100%);
                 .row {
                     margin: 0;
                 }
@@ -180,31 +188,27 @@
                     width: 29.5vw;
                     height: 29.5vw;
                     >.big-product {
-                        @keyframes big-product_rotateIn {
-                            from {
-                                transform: rotateY(0);
-                            }
-                            to {
-                                transform: rotateY(180deg);
-                                background-image: url(../images/cake/dancing-macaron.jpg);
-                            }
-                        }
-                        @keyframes big-product_rotateOut {
-                            from {
-                                transform: rotateY(180deg);
-                                background-image: url(../images/cake/dancing-macaron.jpg);
-                            }
-                            to {
-                                transform: rotateY(0);
-                            }
-                        }
                         &:hover {
                             transform: rotateY(180deg);
                             background-image: none;
+                            &::before {
+                                top: 30px;
+                                left: 260px;
+                                transform: rotate(40deg);
+                            }
+                            &::after {
+                                top: -360px;
+                                right: 260px;
+                                transform: rotate(140deg);
+                            }
+                            +.cat {
+                                transition: 1s;
+                                display: flex;
+                            }
                         }
-                        //animation:big-product_rotateOut .5s forwards;
                         transition: 0.3s;
                         position: absolute;
+                        z-index: 2;
                         top: 0;
                         bottom: 0;
                         left: 0;
@@ -244,6 +248,76 @@
                             left: 0;
                             right: 0;
                             margin: auto;
+                        }
+                    }
+                    .cat {
+                        display: none;
+                        padding: 0 10%;
+                        justify-content: space-around;
+                        .eye {
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50% 5% 50% 5%;
+                            transform: rotate(45deg);
+                            border: 1px solid #505050;
+                            margin-top: 30%;
+                            .addtocart {
+                                color: #505050;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                                border: 1px solid #505050;
+                                position: absolute;
+                                transform: rotate(-45deg);
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                                font-size: 5em;
+                                text-align: center;
+                                line-height: 100%;
+                            }
+                        }
+                        .nose {
+                            position: relative;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            background-color: #505050;
+                            margin-top: 70%;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                z-index: 0;
+                                top: 45px;
+                                bottom: 0;
+                                left: -100px;
+                                right: 0;
+                                margin: auto;
+                                width: 100px;
+                                height: 100px;
+                                border-radius: 50%;
+                                border-color: transparent transparent #505050 #505050;
+                                border-style: solid;
+                                transform: rotate(-45deg);
+                            }
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                z-index: 0;
+                                top: 45px;
+                                bottom: 0;
+                                left: 0;
+                                right: -100px;
+                                margin: auto;
+                                width: 100px;
+                                height: 100px;
+                                border-radius: 50%;
+                                border-color: transparent transparent #505050 #505050;
+                                border-style: solid;
+                                transform: rotate(-45deg);
+                            }
                         }
                     }
                 }
@@ -335,7 +409,13 @@
                             box-shadow: none;
                             border: 2px solid rgb(123, 196, 255);
                             &:not(:last-child)::after {
-                                background-image: url(../images/pay.png);
+                                @keyframes ltor {
+                                    form {}
+                                    to {
+                                        background-position: 31px 0;
+                                    }
+                                }
+                                animation: ltor 1s infinite;
                             }
                             &::before {
                                 border: 2px solid rgb(123, 196, 255);
@@ -486,10 +566,31 @@
                                 width: 95%;
                                 height: 95%;
                                 &::before {
+                                    border-width: 0px 9px 9px 9px;
                                     top: -10px;
                                 }
                                 &::after {
+                                    border-width: 9px 9px 0px 9px;
                                     bottom: -10px;
+                                }
+                                &:hover {
+                                    transform: rotateY(180deg);
+                                    background-image: none;
+                                    &::before {
+                                        top: 10px;
+                                        left: 150px;
+                                        transform: rotate(30deg);
+                                    }
+                                    &::after {
+                                        top: 10px;
+                                        right: 150px;
+                                        transform: rotate(150deg);
+                                        margin: 0 auto;
+                                    }
+                                    +.cat {
+                                        transition: 1s;
+                                        display: flex;
+                                    }
                                 }
                             }
                         }
@@ -516,9 +617,8 @@
                     }
                 }
                 .purchase-process {
-                    margin-top: 0;
                     .processes-box {
-                        margin-top: 5vw;
+                        margin-top: 10vw;
                         >.processes {
                             height: 50vw;
                             width: 30vw;
