@@ -190,7 +190,7 @@
                     >.big-product {
                         &:hover {
                             transform: rotateY(180deg);
-                            background-image: none;
+                            background-image: none !important;
                             &::before {
                                 top: 30px;
                                 left: 250px;
@@ -343,9 +343,6 @@
                             margin: 1vw 0 1vw 1vw;
                         }
                     }
-                }
-                .cathead {
-                    border: 4px solid #bbacfc;
                 }
                 .product-textbox {
                     width: 16vmax;

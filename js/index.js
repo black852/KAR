@@ -1,17 +1,18 @@
 $(document).ready(function() {
 
-    $('.mini-product:nth-child(2)').hover(function() {
+    $('.mini-product').hover(function() {
+
+
             var mini_img = $(this).attr('src');
-            $('.big-product').css({ 'background-image': 'url(' + mini_img + ')' });
+            $('.big-product:eq()').css({ 'background-image': 'url(' + mini_img + ')' });
 
-            $(this).addClass('cathead')
+            $(this).css({ 'border-color': '#bbacfc' });
 
-
+            $('.mini-product').not(this).css({ 'border-color': '#fff' });
         },
         function() {
 
         });
-
 
 
 
