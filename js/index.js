@@ -39,14 +39,20 @@ $(document).ready(function() {
         var mini_img = $(this).attr('src');
 
         var x = $(this).index();
-        $('.lightbox').css({ 'display': 'block' });
-        $('.lightbox img').attr('src', mini_img);
+        $('.lightbox').show();
+        for (var i = 0; i <= 4; i++) {
+            var cake = mini_img.replace(/0.jpg/, i + ".jpg");
+
+            $('.lightbox img:eq(' + i + ')').attr('src', cake);
+
+        }
+
 
 
 
     });
     $('.lightbox button').on('click', function() {
-        $('.lightbox').css({ 'display': 'none' });
+        $('.lightbox').hide();
     });
 
 

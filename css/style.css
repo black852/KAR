@@ -26,8 +26,9 @@
 .lightbox .imgbox {
   border: 5px solid #fff;
   position: absolute;
-  overflow: hidden;
-  z-index: 5;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 10;
   top: 0;
   bottom: 0;
   left: 0;
@@ -286,7 +287,7 @@ h2::after,
   border: 3px solid #bda1ff;
   width: 95%;
   height: 95%;
-  background-image: url(../images/cake.jpg);
+  background-image: url(../images/cake/cake_1_0.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -446,6 +447,10 @@ h2::after,
   height: 5.2vw;
   border: 4px solid white;
   cursor: pointer;
+}
+
+.main-product .mini-product-box > .mini-product:nth-child(1) {
+  border-color: #bda1ff;
 }
 
 .main-product .mini-product-box > .mini-product:nth-child(1), .main-product .mini-product-box > .mini-product:nth-child(5) {
@@ -679,7 +684,6 @@ footer span {
   .lightbox .imgbox {
     border: 5px solid #fff;
     position: absolute;
-    overflow: scroll;
     z-index: 5;
     top: 0;
     bottom: 0;
@@ -687,8 +691,8 @@ footer span {
     right: 0;
     margin: auto;
     width: 80%;
-    -webkit-columns: 1;
-            columns: 1;
+    -webkit-columns: auto;
+            columns: auto;
     -webkit-column-gap: 0;
             column-gap: 0;
   }
