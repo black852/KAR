@@ -8,8 +8,40 @@
                 src: url(../fonts/THE.woff) format("woff");
             }
             
+            $circle-color1:rgb(189, 161, 255);
             * {
                 //outline: 1px solid red;
+            }
+            
+            .lightbox {
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                z-index: 5;
+                display: none;
+                button {
+                    position: absolute;
+                    top: 0;
+                    right: 10%;
+                }
+                .imgbox {
+                    border: 5px solid #fff;
+                    position: absolute;
+                    overflow: hidden;
+                    z-index: 5;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 50%;
+                    columns: 3;
+                    column-gap: 0;
+                    img {
+                        width: 100%;
+                    }
+                }
             }
             
             .top-link {
@@ -26,7 +58,7 @@
                 a:last-child {
                     position: fixed;
                     top: 5vw;
-                    z-index: 1;
+                    z-index: 10;
                     >img {
                         width: 3vw;
                     }
@@ -87,8 +119,8 @@
                 padding: 0;
                 width: 10vw;
                 height: 8vw;
-                background-image: url(../images/mini-navbar3.png);
-                background-size: contain;
+                background-image: url(../images/icon.svg);
+                background-size: cover;
                 background-repeat: no-repeat;
             }
             /*.navbar-toggler-icon {
@@ -105,18 +137,30 @@
             }
             
             .cc {
-                padding-bottom: 10px;
+                position: relative;
+                z-index: 1;
+                padding: 0 0 100px 0;
                 background-image: url(../images/banner/mbg.png);
                 background-repeat: no-repeat;
                 background-size: cover;
                 //background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(255, 221, 230)100%);
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-color: #fff;
+                    opacity: 0.3;
+                    z-index: -1;
+                }
             }
             
             h2,
             .purchase-process>h3 {
                 text-align: center;
                 font-family: "THE";
-                color: rgb(156, 113, 255);
+                color: $circle-color1;
                 margin: 0 auto;
                 padding: 3vh 0 2vh 0;
                 position: relative;
@@ -156,6 +200,15 @@
                 ul {
                     justify-content: space-evenly;
                 }
+                li:nth-child(3) {
+                    a {
+                        color: $circle-color1;
+                    }
+                    img {
+                        border: 2px solid $circle-color1;
+                        border-radius: 50%;
+                    }
+                }
                 a {
                     padding: 0;
                     text-align: center;
@@ -192,17 +245,16 @@
                             transform: rotateY(180deg);
                             background-image: none !important;
                             &::before {
-                                top: 30px;
-                                left: 250px;
+                                top: 10%;
+                                left: 67%;
                                 transform: rotate(40deg);
                             }
                             &::after {
-                                top: -360px;
-                                right: 260px;
+                                top: -83%;
+                                right: 63%;
                                 transform: rotate(140deg);
                             }
                             +.cat {
-                                transition: 1s;
                                 display: flex;
                             }
                         }
@@ -215,7 +267,7 @@
                         right: 0;
                         margin: auto;
                         border-radius: 50%;
-                        border: 3px solid #F8C7D9;
+                        border: 3px solid $circle-color1;
                         width: 95%;
                         height: 95%;
                         background-image: url(../images/cake.jpg);
@@ -228,7 +280,7 @@
                             width: 0;
                             height: 0;
                             border-width: 0px 10px 10px 10px;
-                            border-color: transparent transparent #F8C7D9 transparent;
+                            border-color: transparent transparent $circle-color1 transparent;
                             position: absolute;
                             top: -12px;
                             left: 0;
@@ -242,7 +294,7 @@
                             height: 0;
                             border-style: solid;
                             border-width: 10px 10px 0px 10px;
-                            border-color: #F8C7D9 transparent transparent transparent;
+                            border-color: $circle-color1 transparent transparent transparent;
                             position: absolute;
                             bottom: -12px;
                             left: 0;
@@ -504,6 +556,36 @@
             /*---------------------------------------------------------------------------*/
             
             @media (max-width: 992px) {
+                .lightbox {
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    position: fixed;
+                    z-index: 5;
+                    display: none;
+                    button {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                    .imgbox {
+                        border: 5px solid #fff;
+                        position: absolute;
+                        overflow: scroll;
+                        z-index: 5;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 80%;
+                        columns: 1;
+                        column-gap: 0;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
                 .top-link {
                     padding: 0;
                     position: absolute;
@@ -532,8 +614,63 @@
                     background-color: #fff;
                     position: absolute;
                     z-index: 10;
+                    text-align: center;
+                    padding: 0;
                     .logo {
                         display: none;
+                    }
+                    a {
+                        position: relative;
+                        &:not(.logo) {
+                            line-height: normal;
+                            padding: 0;
+                            margin: 0 auto;
+                            height: 100px;
+                            width: 150px;
+                            line-height: 100px;
+                            font-size: 18px;
+                            font-family: "sim";
+                            color: #303030;
+                            &::before {
+                                content: '';
+                                display: block;
+                                width: 10px;
+                                height: 10px;
+                                background-color: #FDBBFF;
+                                transform: rotate(45deg);
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                margin: auto 0;
+                                transition: 0.3s;
+                            }
+                            &::after {
+                                content: '';
+                                display: block;
+                                width: 10px;
+                                height: 10px;
+                                background-color: #FDBBFF;
+                                transform: rotate(45deg);
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto 0;
+                                transition: 0.3s;
+                            }
+                            &:hover {
+                                &::before,
+                                &::after {
+                                    content: '';
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: rgba(255, 255, 255, 0);
+                                    border: 2px solid #FDBBFF;
+                                    top: 0;
+                                }
+                            }
+                        }
                     }
                 }
                 h2,
@@ -562,7 +699,6 @@
                             width: 85vw;
                             height: 85vw;
                             >.big-product {
-                                border: 1px solid #F8C7D9;
                                 width: 95%;
                                 height: 95%;
                                 &::before {
@@ -574,8 +710,6 @@
                                     bottom: -10px;
                                 }
                                 &:hover {
-                                    transform: rotateY(180deg);
-                                    background-image: none;
                                     &::before {
                                         top: 10px;
                                         left: 150px;
@@ -586,10 +720,6 @@
                                         right: 150px;
                                         transform: rotate(150deg);
                                         margin: 0 auto;
-                                    }
-                                    +.cat {
-                                        transition: 1s;
-                                        display: flex;
                                     }
                                 }
                             }
