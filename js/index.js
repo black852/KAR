@@ -39,7 +39,7 @@ $(document).ready(function() {
         var mini_img = $(this).attr('src');
 
         var x = $(this).index();
-        $('.lightbox').show();
+        $('.lightbox').show(500);
         for (var i = 0; i <= 4; i++) {
             var cake = mini_img.replace(/0.jpg/, i + ".jpg");
 
