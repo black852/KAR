@@ -136,9 +136,10 @@
   background-repeat: no-repeat;
 }
 
-/*.navbar-toggler-icon {
-            background-image: url(../images/mini-navbar2.png);
-        }*/
+.carousel-item img {
+  height: calc(100vh - 150px);
+}
+
 .down {
   position: absolute;
   width: 6vw;
@@ -727,6 +728,9 @@ footer span {
   }
   .top-link a:last-child > img {
     width: 5vw;
+  }
+  .carousel-item img {
+    height: 50vh;
   }
   .nav1 {
     background-color: #fff;
