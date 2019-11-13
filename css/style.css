@@ -27,7 +27,7 @@
   border: 5px solid #fff;
   position: absolute;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   z-index: 10;
   top: 0;
   bottom: 0;
@@ -35,8 +35,8 @@
   right: 0;
   margin: auto;
   width: 50%;
-  -webkit-columns: 3;
-          columns: 3;
+  -webkit-columns: 4;
+          columns: 4;
   -webkit-column-gap: 0;
           column-gap: 0;
 }
@@ -66,7 +66,7 @@
 .top-link a:last-child {
   position: fixed;
   top: 5vw;
-  z-index: 10;
+  z-index: 999;
 }
 
 .top-link a:last-child > img {
@@ -117,48 +117,42 @@
 }
 
 @-webkit-keyframes around {
-  0% {
-    -webkit-clip-path: inset(0 0 99% 0);
-            clip-path: inset(0 0 99% 0);
+  0%,
+  100% {
+    -webkit-clip-path: inset(2% 2% 0% 2%);
+            clip-path: inset(2% 2% 0% 2%);
   }
   25% {
-    -webkit-clip-path: inset(0 0 0 99%);
-            clip-path: inset(0 0 0 99%);
+    -webkit-clip-path: inset(2% 2% 2% 0%);
+            clip-path: inset(2% 2% 2% 0%);
   }
   50% {
-    -webkit-clip-path: inset(99% 0 0 0);
-            clip-path: inset(99% 0 0 0);
+    -webkit-clip-path: inset(0% 2% 2% 2%);
+            clip-path: inset(0% 2% 2% 2%);
   }
   75% {
-    -webkit-clip-path: inset(0 99% 0 0);
-            clip-path: inset(0 99% 0 0);
-  }
-  100% {
-    -webkit-clip-path: inset(0 0 99% 0);
-            clip-path: inset(0 0 99% 0);
+    -webkit-clip-path: inset(2% 0% 2% 2%);
+            clip-path: inset(2% 0% 2% 2%);
   }
 }
 
 @keyframes around {
-  0% {
-    -webkit-clip-path: inset(0 0 99% 0);
-            clip-path: inset(0 0 99% 0);
+  0%,
+  100% {
+    -webkit-clip-path: inset(2% 2% 0% 2%);
+            clip-path: inset(2% 2% 0% 2%);
   }
   25% {
-    -webkit-clip-path: inset(0 0 0 99%);
-            clip-path: inset(0 0 0 99%);
+    -webkit-clip-path: inset(2% 2% 2% 0%);
+            clip-path: inset(2% 2% 2% 0%);
   }
   50% {
-    -webkit-clip-path: inset(99% 0 0 0);
-            clip-path: inset(99% 0 0 0);
+    -webkit-clip-path: inset(0% 2% 2% 2%);
+            clip-path: inset(0% 2% 2% 2%);
   }
   75% {
-    -webkit-clip-path: inset(0 99% 0 0);
-            clip-path: inset(0 99% 0 0);
-  }
-  100% {
-    -webkit-clip-path: inset(0 0 99% 0);
-            clip-path: inset(0 0 99% 0);
+    -webkit-clip-path: inset(2% 0% 2% 2%);
+            clip-path: inset(2% 0% 2% 2%);
   }
 }
 
@@ -169,8 +163,8 @@
   background-color: rgba(255, 255, 255, 0);
   top: 15px;
   border: solid 2px #FDBBFF;
-  -webkit-animation: around 1s infinite linear;
-          animation: around 1s infinite linear;
+  -webkit-animation: around 2s infinite linear;
+          animation: around 2s infinite linear;
 }
 
 .nav1 > .mini-button {
@@ -280,6 +274,8 @@ h2::after,
 .nav2 li:nth-child(3) img {
   border: 2px solid #bda1ff;
   border-radius: 50%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .nav2 a {
@@ -336,7 +332,7 @@ h2::after,
   border: 3px solid #bda1ff;
   width: 95%;
   height: 95%;
-  background-image: url(../images/cake/cake_1_0.jpg);
+  background-image: url(../images/cake/cake_2_0_0.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -769,10 +765,9 @@ footer span {
   .top-link a:last-child {
     position: fixed;
     top: 30vw;
-    z-index: 1;
   }
   .top-link a:last-child > img {
-    width: 5vw;
+    width: 8vw;
   }
   .carousel-item img {
     height: 50vh;

@@ -29,7 +29,7 @@
                     border: 5px solid #fff;
                     position: absolute;
                     overflow-x: hidden;
-                    overflow-y: auto;
+                    overflow-y: scroll;
                     z-index: 10;
                     top: 0;
                     bottom: 0;
@@ -37,7 +37,7 @@
                     right: 0;
                     margin: auto;
                     width: 50%;
-                    columns: 3;
+                    columns: 4;
                     column-gap: 0;
                     img {
                         width: 100%;
@@ -59,7 +59,7 @@
                 a:last-child {
                     position: fixed;
                     top: 5vw;
-                    z-index: 10;
+                    z-index: 999;
                     >img {
                         width: 3vw;
                     }
@@ -102,20 +102,18 @@
                         }
                         &:hover {
                             @keyframes around {
-                                0% {
-                                    clip-path: inset(0 0 99% 0);
+                                0%,
+                                100% {
+                                    clip-path: inset(2% 2% 0% 2%);
                                 }
                                 25% {
-                                    clip-path: inset(0 0 0 99%);
+                                    clip-path: inset(2% 2% 2% 0%);
                                 }
                                 50% {
-                                    clip-path: inset(99% 0 0 0);
+                                    clip-path: inset(0% 2% 2% 2%);
                                 }
                                 75% {
-                                    clip-path: inset(0 99% 0 0);
-                                }
-                                100% {
-                                    clip-path: inset(0 0 99% 0);
+                                    clip-path: inset(2% 0% 2% 2%);
                                 }
                             }
                             &::before {
@@ -125,7 +123,7 @@
                                 background-color: rgba(255, 255, 255, 0);
                                 top: 15px;
                                 border: solid 2px #FDBBFF;
-                                animation: around 1s infinite linear;
+                                animation: around 2s infinite linear;
                             }
                         }
                     }
@@ -227,6 +225,7 @@
                     img {
                         border: 2px solid $circle-color1;
                         border-radius: 50%;
+                        transform: scale(1.1);
                     }
                 }
                 a {
@@ -290,7 +289,7 @@
                         border: 3px solid $circle-color1;
                         width: 95%;
                         height: 95%;
-                        background-image: url(../images/cake/cake_1_0.jpg);
+                        background-image: url(../images/cake/cake_2_0_0.jpg);
                         background-repeat: no-repeat;
                         background-size: cover;
                         &::before {
@@ -623,9 +622,8 @@
                     a:last-child {
                         position: fixed;
                         top: 30vw;
-                        z-index: 1;
                         >img {
-                            width: 5vw;
+                            width: 8vw;
                         }
                     }
                 }

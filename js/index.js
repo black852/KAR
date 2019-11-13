@@ -12,6 +12,10 @@ $(document).ready(function() {
 
             $('.mini-product').not(this).css({ 'border-color': '#fff' });
 
+
+
+
+
             var x = $(this).index();
             if (x == 1) {
                 $('.product-textbox>h3').text("유명");
@@ -40,21 +44,40 @@ $(document).ready(function() {
 
         var x = $(this).index();
         $('.lightbox').show(500);
-        for (var i = 0; i <= 4; i++) {
+        for (var i = 0; i <= 9; i++) {
             var cake = mini_img.replace(/0.jpg/, i + ".jpg");
 
             $('.lightbox img:eq(' + i + ')').attr('src', cake);
 
         }
 
-
-
-
     });
     $('.lightbox button').on('click', function() {
         $('.lightbox').hide();
     });
 
+    $('.nav2 .nav-link').hover(function() {
+        $(this).css({ 'color': 'rgb(189, 161, 255)' });
+        $(this).find('img').css({ 'border': '2px solid rgb(189, 161, 255)', 'border-radius': '50%', 'transform': 'scale(1.1)' });
+        $('.nav2 .nav-link').not(this).css({ 'color': '#303030' });
+        $('.nav2 .nav-link').not(this).find('img').css({ 'border': 'none', 'transform': 'scale(1)' });
+
+        var x = $(this).parent().index();
+
+
+
+        $('.mini-product:eq(0)').attr('src', 'images/cake/cake_' + x + '_0_0.jpg');
+        $('.mini-product:eq(1)').attr('src', 'images/cake/cake_' + x + '_1_0.jpg');
+        $('.mini-product:eq(2)').attr('src', 'images/cake/cake_' + x + '_2_0.jpg');
+        $('.mini-product:eq(3)').attr('src', 'images/cake/cake_' + x + '_3_0.jpg');
+        $('.mini-product:eq(4)').attr('src', 'images/cake/cake_' + x + '_4_0.jpg');
+        var head_1 = $('.mini-product:eq(0)').attr('src');
+
+        $('.big-product').css({ 'background-image': 'url(' + head_1 + ')' });
+
+    }, function() {
+        // out
+    });
 
 
 });
