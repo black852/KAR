@@ -22,8 +22,11 @@
                 display: none;
                 button {
                     position: absolute;
-                    top: 0;
+                    border-color: transparent;
+                    top: 10%;
                     right: 10%;
+                    background-color: transparent;
+                    font-size: 5em;
                 }
                 .imgbox {
                     border: 5px solid #fff;
@@ -100,7 +103,32 @@
                             margin: 0 auto;
                             transition: 0.3s;
                         }
+                        &::after {
+                            display: none;
+                            color: red;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                        }
+                        &[href="pg1"]::after {
+                            content: '우리에대해';
+                        }
+                        &[href="pg2"]::after {
+                            content: '상품';
+                        }
+                        &[href="pg3"]::after {
+                            content: '사랑';
+                        }
+                        &[href="pg4"]::after {
+                            content: '접촉';
+                        }
                         &:hover {
+                            &::after {
+                                display: block;
+                            }
                             @keyframes around {
                                 0%,
                                 100% {
@@ -145,13 +173,29 @@
                 height: calc(100vh - 150px);
             }
             
+            @keyframes down_animation {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: .5;
+                    width: 5vw;
+                }
+            }
+            
             .down {
+                //background-color: red;
                 position: absolute;
                 width: 6vw;
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 0);
                 z-index: 2;
+                animation: down_animation 2s infinite linear;
+                &:hover {
+                    animation-play-state: paused;
+                }
             }
             
             .cc {
@@ -161,6 +205,7 @@
                 background-image: url(../images/banner/mbg.png);
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-attachment: fixed;
                 //background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(255, 221, 230)100%);
                 &::before {
                     content: '';
@@ -628,14 +673,25 @@
                     }
                 }
                 .carousel-item img {
-                    height: 50vh;
+                    height: 100vh;
+                }
+                @keyframes down_animation {
+                    0%,
+                    100% {
+                        opacity: 1;
+                    }
+                    50% {
+                        opacity: .5;
+                        width: 13vw;
+                    }
                 }
                 .down {
                     width: 15vw;
                 }
                 .nav1 {
                     background-color: #fff;
-                    position: absolute;
+                    border-radius: 5px;
+                    position: fixed;
                     z-index: 10;
                     text-align: center;
                     padding: 0;

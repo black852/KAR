@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "sim";
   src: url(../fonts/simhei.woff) format("woff");
@@ -19,8 +20,11 @@
 
 .lightbox button {
   position: absolute;
-  top: 0;
+  border-color: transparent;
+  top: 10%;
   right: 10%;
+  background-color: transparent;
+  font-size: 5em;
 }
 
 .lightbox .imgbox {
@@ -116,6 +120,37 @@
   transition: 0.3s;
 }
 
+.nav1 a:not(.logo)::after {
+  display: none;
+  color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.nav1 a:not(.logo)[href="pg1"]::after {
+  content: '우리에대해';
+}
+
+.nav1 a:not(.logo)[href="pg2"]::after {
+  content: '상품';
+}
+
+.nav1 a:not(.logo)[href="pg3"]::after {
+  content: '사랑';
+}
+
+.nav1 a:not(.logo)[href="pg4"]::after {
+  content: '접촉';
+}
+
+.nav1 a:not(.logo):hover::after {
+  display: block;
+}
+
 @-webkit-keyframes around {
   0%,
   100% {
@@ -182,6 +217,28 @@
   height: calc(100vh - 150px);
 }
 
+@-webkit-keyframes down_animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+    width: 5vw;
+  }
+}
+
+@keyframes down_animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+    width: 5vw;
+  }
+}
+
 .down {
   position: absolute;
   width: 6vw;
@@ -190,6 +247,13 @@
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   z-index: 2;
+  -webkit-animation: down_animation 2s infinite linear;
+          animation: down_animation 2s infinite linear;
+}
+
+.down:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 .cc {
@@ -199,6 +263,7 @@
   background-image: url(../images/banner/mbg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .cc::before {
@@ -770,14 +835,35 @@ footer span {
     width: 8vw;
   }
   .carousel-item img {
-    height: 50vh;
+    height: 100vh;
+  }
+  @-webkit-keyframes down_animation {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+      width: 13vw;
+    }
+  }
+  @keyframes down_animation {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+      width: 13vw;
+    }
   }
   .down {
     width: 15vw;
   }
   .nav1 {
     background-color: #fff;
-    position: absolute;
+    border-radius: 5px;
+    position: fixed;
     z-index: 10;
     text-align: center;
     padding: 0;
