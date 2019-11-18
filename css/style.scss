@@ -325,10 +325,12 @@
                                 transform: rotate(140deg);
                             }
                             +.cat {
+                                transition-delay: .2s;
+                                visibility: visible;
                                 display: flex;
                             }
                         }
-                        transition: 0.3s;
+                        transition: 0.3s ease all;
                         position: absolute;
                         z-index: 2;
                         top: 0;
@@ -373,7 +375,7 @@
                         }
                     }
                     .cat {
-                        display: none;
+                        visibility: hidden;
                         padding: 0 10%;
                         justify-content: space-around;
                         .eye {

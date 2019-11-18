@@ -389,8 +389,8 @@ h2::after,
 }
 
 .main-product .circle > .big-product {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
   position: absolute;
   z-index: 2;
   top: 0;
@@ -428,6 +428,9 @@ h2::after,
 }
 
 .main-product .circle > .big-product:hover + .cat {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+  visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -464,7 +467,7 @@ h2::after,
 }
 
 .main-product .circle .cat {
-  display: none;
+  visibility: hidden;
   padding: 0 10%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
