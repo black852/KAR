@@ -18,7 +18,7 @@
                 height: 100vh;
                 background-color: rgba(0, 0, 0, 0.5);
                 position: fixed;
-                z-index: 5;
+                z-index: 15;
                 display: none;
                 button {
                     position: absolute;
@@ -80,8 +80,21 @@
                 text-align: center;
                 padding: 0;
                 a {
+                    //transition: .3s;
+                    //transition-delay: .3s;
+                    span {
+                        //transition: .3s;
+                        visibility: hidden;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
                     position: relative;
                     &:not(.logo) {
+                        color: #000;
                         line-height: 100px;
                         padding: 0;
                         margin: 0 37.5px;
@@ -89,7 +102,6 @@
                         width: 100px;
                         font-size: 18px;
                         font-family: "sim";
-                        color: black;
                         &::before {
                             content: '';
                             display: block;
@@ -103,31 +115,13 @@
                             margin: 0 auto;
                             transition: 0.3s;
                         }
-                        &::after {
-                            display: none;
-                            color: red;
-                            position: absolute;
-                            left: 0;
-                            right: 0;
-                            top: 0;
-                            bottom: 0;
-                            margin: auto;
-                        }
-                        &[href="pg1"]::after {
-                            content: '우리에대해';
-                        }
-                        &[href="pg2"]::after {
-                            content: '상품';
-                        }
-                        &[href="pg3"]::after {
-                            content: '사랑';
-                        }
-                        &[href="pg4"]::after {
-                            content: '접촉';
-                        }
                         &:hover {
-                            &::after {
-                                display: block;
+                            color: transparent;
+                            span {
+                                top: 0;
+                                color: #000;
+                                visibility: visible;
+                                //transition-delay: .3s;
                             }
                             @keyframes around {
                                 0%,
@@ -629,8 +623,9 @@
                     display: none;
                     button {
                         position: absolute;
+                        z-index: 6;
                         top: 0;
-                        right: 0;
+                        right: 10%;
                     }
                     .imgbox {
                         border: 5px solid #fff;
