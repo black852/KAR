@@ -196,9 +196,37 @@
   padding: 0;
   width: 10vw;
   height: 8vw;
-  background-image: url(../images/icon.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+
+.nav1 > .mini-button svg > path,
+.nav1 > .mini-button rect {
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.nav1 > .mini-button.active .n1-1,
+.nav1 > .mini-button.active .n2-1 {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(-45deg) translate(-40%, -10%);
+          transform: rotate(-45deg) translate(-40%, -10%);
+}
+
+.nav1 > .mini-button.active .n1-2,
+.nav1 > .mini-button.active .n2-2 {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(45deg) translate(16%, -23%);
+          transform: rotate(45deg) translate(16%, -23%);
+}
+
+.nav1 > .mini-button.active .cls-3 {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translate(-7%, -50%);
+          transform: translate(-7%, -50%);
+  width: 95%;
+  height: 100%;
 }
 
 .carousel-item img {

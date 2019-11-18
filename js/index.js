@@ -78,6 +78,9 @@ $(document).ready(function() {
     }, function() {
         // out
     });
+    $('.nav1>.mini-button').on('click', function() {
+        $(this).toggleClass('active');
+    })
 
 
 });
